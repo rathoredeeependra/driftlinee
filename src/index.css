@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0B0F14;
+  --color-ink-raised: #10161D;
+  --color-line: #1E2733;
+  --color-fog: #8A97A6;
+  --color-paper: #E8EAED;
+  --color-signal: #5EEAD4;
+  --color-signal-dim: #2E6E68;
+  --color-amber: #F2A65A;node -v
+  --color-amber-dim: #6B4A28;
+
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-display);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-signal);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+}
